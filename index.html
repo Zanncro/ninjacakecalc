@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://ninjacakecards.github.io/ninjacakecards.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  </head>
+
+
+  <body onload="outputSavedExcha()">
+  <div class="container">
+
+  <div class="logo"><img src="https://i.imgur.com/bURq8gE.jpg"></div>
+
+
+  <section class="margin-top">
+    <div class="text-header">eBay Sell Price</div>
+    <input type="number" id="ebayPrice" tabindex="1" placeholder="eBay Sell Price in £">
+
+
+    <div class="text-header">CM Sell Price</div>
+    <input type="number" id="CMPrice" tabindex="2" placeholder="CM Sell Price in €">
+
+    <div class="button-container">
+    <button onclick="calculateValue()" class="calcButton" type="submit" >Calculate</button>
+    </div>
+    </section>
+
+    <section class="margin-top out-put-area">
+    <div class="flex-display box-styling">
+      <div class="text-header">eBay after fees inc postage: </div>
+      <div id="ebayOutput"></div>
+    </div>
+
+    <div class="flex-display box-styling">
+      <div class="text-header">CM after fees exc postage profit: </div>
+      <div id="CMOutput"></div>
+    </div>
+    </section>
+
+
+
+    <button class="collapsible">Settings</button>
+    <div class="content">
+      <input type="number" id="custExcha" placeholder="Enter Custom Exchange Rate">
+
+      <div id="savedExcha"></div>
+
+      <div class="button-container">
+        <button onclick="saveSettings()" class="" type="submit">Save</button>
+      </div>
+    </div>
+
+    </div><!-- .container -->
+   </body>
+
+   <script src="https://ninjacakecards.github.io/ninjacakecards.js"></script>
+</html>
