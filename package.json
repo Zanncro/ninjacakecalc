@@ -1,0 +1,25 @@
+{
+  "name": "ninjacakecalc",
+  "version": "1.0.0",
+  "description": "Price calc for Ninjacakecards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zanncro/ninjacakecalc.git"
+  },
+  "author": "Shane Dixon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zanncro/ninjacakecalc/issues"
+  },
+  "homepage": "https://github.com/Zanncro/ninjacakecalc#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}
