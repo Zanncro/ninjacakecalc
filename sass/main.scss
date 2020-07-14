@@ -1,5 +1,12 @@
-$brandColour: #f3ac74;
+$brandColour: #e47724;
 
-body{
-    background: $brandColour;
+#header{
+    background-color: $brandColour;
+    color: #fff;
+    border-radius: 0px 0px 0px 50px;
+}
+
+#header a{
+    color: #fff;
+    
 }
