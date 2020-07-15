@@ -5,3 +5,10 @@
 
 #header a {
   color: #fff; }
+
+.calcButton, .save-btn {
+  color: #e47724;
+  border-color: #e47724; }
+
+a.nav-link.active {
+  font-weight: 600; }

@@ -32,8 +32,8 @@
       </div>
       <div class="col-12 col-md-6 m-auto">
         <nav class="nav justify-content-center justify-content-md-end">
-          <a class="nav-link active" href="index.html">Home</a>
-          <a class="nav-link" href="settings.html">Settings</a>
+          <a class="nav-link " href="index.html">Home</a>
+          <a class="nav-link active" href="settings.html">Settings</a>
           <a class="nav-link" href="#">Fill</a>
         </nav>
       </div>
@@ -42,44 +42,23 @@
 </header>
 
 <body onload="outputSavedExcha()">
-  <div class="container">
-    <div class="input-group mb-3 mt-3 justify-content-center">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">£</span>
-      </div>
-        <input type="number" id="ebayPrice" tabindex="1" placeholder="eBay Sell Price in £" class="form-control" aria-describedby="basic-addon1" aria-label="eBay Price">
-    </div>
+    <div class="container">
+        <div class="input-group mb-3 mt-4">
+          <input type="number" id="custExcha" placeholder="Enter Custom Exchange Rate" class="form-control" aria-label="exchange rate" aria-descripbedby="basic-addon2">
+          <div class="input-group-append">
+            <button onclick="saveSettings()" class="save-btn btn btn-outline-secondary" type="submit">Save</button>
+          </div>
+        </div>
 
-    <div class="input-group mb-3 mt-3 justify-content-center">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">€</span>
-      </div>
-        <input type="number" id="CMPrice" tabindex="2" placeholder="CM Sell Price in €" class="form-control" aria-describedby="basic-addon1" aria-label="Card Market Price">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="font-weight-bold display-5">Exchange Rate:</span>
+            </div>
+            <div class="col-12 text-center">
+                <div class="font-weight-bold display-5" id="savedExcha"></div>
+            </div>
+          </div>
     </div>
-
-    <div class="row p-2 mt-1 mb-1">
-      <div class="col text-center">
-        <button onclick="calculateValue()" class="calcButton btn btn-outline-primary" type="submit">Calculate</button>
-      </div>
-    </div>
-
-
-    <div class="row p-2">
-      <div class="col text-center">
-        <div class="">eBay after fees inc postage: </div>
-        <div id="ebayOutput">&nbsp;</div>
-      </div>
-    </div>
-
-    <div class="row p-2">
-      <div class="col text-center">
-        <div class="">CM after fees exc postage profit: </div>
-        <div id="CMOutput">&nbsp;</div>
-      </div>
-    </div>
-  </div><!-- .container -->
 </body>
-
 <script src="javascript/ninjacakecards.js"></script>
-
 </html>

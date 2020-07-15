@@ -8,5 +8,13 @@ $brandColour: #e47724;
 
 #header a{
     color: #fff;
-    
+}
+
+.calcButton, .save-btn{
+    color:$brandColour;
+    border-color: $brandColour;
+}
+
+a.nav-link.active{
+    font-weight:600;
 }
