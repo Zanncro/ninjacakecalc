@@ -1,5 +1,5 @@
 document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate");
-document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent");
+document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent") + "%";
 
 function calculateValue(){
   var ebayInput = document.getElementById("ebayPrice").value;
@@ -41,7 +41,7 @@ function calculateValue(){
 
   if(ebayInput < 10 && ebayInput > 0){
   var comboPrice = paypalFlatMicro + envelope + toploader;
-  var ebayFees = 0.83
+  var ebayFees = 0.83;
   deductFromPrice = comboPrice + underTwenty;
   }
   if(ebayInput < 20 && ebayInput >= 10){
