@@ -1,5 +1,5 @@
 document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate");
-
+document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent");
 
 function calculateValue(){
   var ebayInput = document.getElementById("ebayPrice").value;
@@ -17,6 +17,11 @@ function calculateValue(){
 
   /*CONVERSION RATE*/
   var convRate = localStorage.getItem("exchangeRate");
+  /*CONVERSION RATE*/
+
+  /*CONVERSION RATE*/
+  var percentageOffPrice = localStorage.getItem("buyPercent") / 100;
+
   /*CONVERSION RATE*/
 
   /*POSTAGE AND OTHER FEEES*/
@@ -59,6 +64,8 @@ function calculateValue(){
   ebayCalc = Math.floor(ebayCalc * 100) / 100;
 
   document.getElementById("ebayOutput").innerHTML = "£" + parseFloat(ebayCalc).toFixed(2);
+  var offerPriceEbay = ebayCalc * percentageOffPrice;
+  document.getElementById("offerEbayOutput").innerHTML = "£" + parseFloat(offerPriceEbay).toFixed(2);
   }
 
 
@@ -71,15 +78,27 @@ function calculateValue(){
   CMCalc = Math.floor(CMCalc * 100) / 100;
 
   document.getElementById("CMOutput").innerHTML = "£" + parseFloat(CMCalc).toFixed(2);
+
+  var offerPriceCM = CMCalc * percentageOffPrice;
+
+  document.getElementById("offerCMOutput").innerHTML = "£" + parseFloat(offerPriceCM).toFixed(2);
   }
 }
 
-function saveSettings(){
+function saveRate(){
   var ExchangeInput = document.getElementById("custExcha").value;
 
   localStorage.setItem("exchangeRate", ExchangeInput);
 
   document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate")
+}
+
+function saveBuyPercent(){
+  var percentInput = document.getElementById("custBuyPercent").value;
+
+  localStorage.setItem("buyPercent", percentInput);
+
+  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent") + "%";
 }
 
 document.onkeydown = function (e) {
@@ -90,19 +109,4 @@ case 13:
 default:
     return; // Do nothing for the rest
 }
-}
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
 }

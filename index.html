@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -18,7 +18,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-    <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <title></title>
 </head>
@@ -47,14 +47,16 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">£</span>
       </div>
-        <input type="number" id="ebayPrice" tabindex="1" placeholder="eBay Sell Price in £" class="form-control" aria-describedby="basic-addon1" aria-label="eBay Price">
+      <input type="number" id="ebayPrice" tabindex="1" placeholder="eBay Sell Price in £" class="form-control"
+        aria-describedby="basic-addon1" aria-label="eBay Price">
     </div>
 
     <div class="input-group mb-3 mt-3 justify-content-center">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">€</span>
       </div>
-        <input type="number" id="CMPrice" tabindex="2" placeholder="CM Sell Price in €" class="form-control" aria-describedby="basic-addon1" aria-label="Card Market Price">
+      <input type="number" id="CMPrice" tabindex="2" placeholder="CM Sell Price in €" class="form-control"
+        aria-describedby="basic-addon1" aria-label="Card Market Price">
     </div>
 
     <div class="row p-2 mt-1 mb-1">
@@ -75,6 +77,20 @@
       <div class="col text-center">
         <div class="">CM after fees exc postage profit: </div>
         <div id="CMOutput">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="row p-2">
+      <div class="col text-center">
+        <div class="">eBay offer price: </div>
+        <div id="offerEbayOutput">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="row p-2">
+      <div class="col text-center">
+        <div class="">CM offer price: </div>
+        <div id="offerCMOutput">&nbsp;</div>
       </div>
     </div>
   </div><!-- .container -->
