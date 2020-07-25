@@ -1,17 +1,18 @@
 if(localStorage.getItem("storedExchangeRate") == null){
   localStorage.setItem("storedExchangeRate", 0.85);
-  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate");
+  document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
 }
 else{
-  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate");
+  console.log(localStorage.getItem("storedExchangeRate"));
+  document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
 }
 
 if(localStorage.getItem("storedPercentage") == null){
   localStorage.setItem("storedPercentage", 20);
-  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
+  document.getElementById("percentOurput").innerHTML = localStorage.getItem("storedPercentage") + "%";
 }
 else{
-  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
+  document.getElementById("percentOurput").innerHTML = localStorage.getItem("storedPercentage") + "%";
 }
 
 function calculateValue(){
@@ -100,18 +101,12 @@ function calculateValue(){
 
 function saveRate(){
   var ExchangeInput = document.getElementById("custExcha").value;
-
-  localStorage.setItem("storedExchangeRate", ExchangeInput);
-
-  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate")
+  document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.setItem("storedExchangeRate", ExchangeInput);
 }
 
 function saveBuyPercent(){
   var percentInput = document.getElementById("custBuyPercent").value;
-
-  localStorage.setItem("storedPercentage", percentInput);
-
-  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
+  document.getElementById("percentOurput").innerHTML = localStorage.setItem("storedPercentage", percentInput);
 }
 
 document.onkeydown = function (e) {
