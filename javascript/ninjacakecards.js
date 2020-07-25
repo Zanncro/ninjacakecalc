@@ -1,5 +1,18 @@
-document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate");
-document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent") + "%";
+if(localStorage.getItem("storedExchangeRate") == null){
+  localStorage.setItem("storedExchangeRate", 0.85);
+  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate");
+}
+else{
+  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate");
+}
+
+if(localStorage.getItem("storedPercentage") == null){
+  localStorage.setItem("storedPercentage", 20);
+  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
+}
+else{
+  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
+}
 
 function calculateValue(){
   var ebayInput = document.getElementById("ebayPrice").value;
@@ -16,11 +29,11 @@ function calculateValue(){
   /*CALC VARIABLES*/
 
   /*CONVERSION RATE*/
-  var convRate = localStorage.getItem("exchangeRate");
+  var conversionRate = localStorage.getItem("storedExchangeRate");
   /*CONVERSION RATE*/
 
   /*CONVERSION RATE*/
-  var percentageOffPrice = localStorage.getItem("buyPercent") / 100;
+  var percentageOffPrice = localStorage.getItem("storedPercentage") / 100;
 
   /*CONVERSION RATE*/
 
@@ -74,7 +87,7 @@ function calculateValue(){
   document.getElementById("CMOutput").innerHTML = "";
   }
   else{
-  CMCalc = ((CMInput * CMFees) * convRate) - (envelope + toploader);
+  CMCalc = ((CMInput * CMFees) * conversionRate) - (envelope + toploader);
   CMCalc = Math.floor(CMCalc * 100) / 100;
 
   document.getElementById("CMOutput").innerHTML = "£" + parseFloat(CMCalc).toFixed(2);
@@ -88,17 +101,17 @@ function calculateValue(){
 function saveRate(){
   var ExchangeInput = document.getElementById("custExcha").value;
 
-  localStorage.setItem("exchangeRate", ExchangeInput);
+  localStorage.setItem("storedExchangeRate", ExchangeInput);
 
-  document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate")
+  document.getElementById("storedExchangeRatea").innerHTML = localStorage.getItem("storedExchangeRate")
 }
 
 function saveBuyPercent(){
   var percentInput = document.getElementById("custBuyPercent").value;
 
-  localStorage.setItem("buyPercent", percentInput);
+  localStorage.setItem("storedPercentage", percentInput);
 
-  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("buyPercent") + "%";
+  document.getElementById("savedBuyPercent").innerHTML = localStorage.getItem("storedPercentage") + "%";
 }
 
 document.onkeydown = function (e) {
