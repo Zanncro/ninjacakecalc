@@ -46,7 +46,7 @@
         <div class="input-group mb-3 mt-4">
           <input type="number" id="custExcha" placeholder="Enter Custom Exchange Rate" class="form-control" aria-label="exchange rate" aria-descripbedby="basic-addon2">
           <div class="input-group-append">
-            <button onclick="saveRate()" class="save-btn btn btn-outline-secondary" type="submit">Save</button>
+            <button id="saveRate" class="save-btn btn btn-outline-secondary" type="submit">Save</button>
           </div>
         </div>
 
@@ -62,7 +62,7 @@
           <div class="input-group mb-3 mt-4">
             <input type="number" id="custBuyPercent" placeholder="Enter Custom %" class="form-control" aria-label="exchange rate" aria-descripbedby="basic-addon2">
             <div class="input-group-append">
-              <button onclick="saveBuyPercent()" class="save-btn btn btn-outline-secondary" type="submit">Save</button>
+              <button id="savePercent" class="save-btn btn btn-outline-secondary" type="submit">Save</button>
             </div>
           </div>
   
@@ -71,10 +71,12 @@
                   <span class="font-weight-bold display-5">Buy Percent:</span>
               </div>
               <div class="col-12 text-center">
-                  <div class="font-weight-bold display-5" id="percentOurput"></div>
+                  <div class="font-weight-bold display-5" id="percentOutput"></div>
               </div>
             </div>
     </div>
 </body>
+
+
 <script src="javascript/ninjacakecards.js"></script>
 </html>

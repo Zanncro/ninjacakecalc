@@ -3,16 +3,15 @@ if(localStorage.getItem("storedExchangeRate") == null){
   document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
 }
 else{
-  console.log(localStorage.getItem("storedExchangeRate"));
   document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
 }
 
 if(localStorage.getItem("storedPercentage") == null){
   localStorage.setItem("storedPercentage", 20);
-  document.getElementById("percentOurput").innerHTML = localStorage.getItem("storedPercentage") + "%";
+  document.getElementById("percentOutput").innerHTML = localStorage.getItem("storedPercentage") + "%";
 }
 else{
-  document.getElementById("percentOurput").innerHTML = localStorage.getItem("storedPercentage") + "%";
+  document.getElementById("percentOutput").innerHTML = localStorage.getItem("storedPercentage") + "%";
 }
 
 function calculateValue(){
@@ -99,15 +98,15 @@ function calculateValue(){
   }
 }
 
-function saveRate(){
-  var ExchangeInput = document.getElementById("custExcha").value;
-  document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.setItem("storedExchangeRate", ExchangeInput);
-}
+document.getElementById('saveRate').addEventListener('click', () => {
+  localStorage.setItem("storedExchangeRate", document.getElementById("custExcha").value)
+  document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
+});
 
-function saveBuyPercent(){
-  var percentInput = document.getElementById("custBuyPercent").value;
-  document.getElementById("percentOurput").innerHTML = localStorage.setItem("storedPercentage", percentInput);
-}
+document.getElementById("savePercent").addEventListener("click", () => {
+  localStorage.setItem("storedPercentage", document.getElementById("custBuyPercent").value);
+  document.getElementById("percentOutput").innerHTML = localStorage.getItem("storedPercentage") + "%";
+});
 
 document.onkeydown = function (e) {
 switch (e.keyCode) {
