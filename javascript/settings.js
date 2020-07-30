@@ -1,3 +1,6 @@
+const API_URL = 'http://localhost:5000/exchangeRate';
+
+
 if(localStorage.getItem("storedExchangeRate") == null){
   localStorage.setItem("storedExchangeRate", 0.85);
   document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
@@ -15,12 +18,29 @@ else{
 }
 
 document.getElementById('saveRate').addEventListener('click', () => {
-  if(document.getElementById("custExcha").value == ''){
+  var customExchangeRate = document.getElementById("custExcha").value;
+  
+  if(customExchangeRate == ''){
   }
   else{
   localStorage.setItem("storedExchangeRate", document.getElementById("custExcha").value)
   document.getElementById("storedExchangeRateOutput").innerHTML = localStorage.getItem("storedExchangeRate");
   }
+
+  const rate = {
+    customExchangeRate
+  };
+
+  fetch(API_URL, {
+    method: 'POST',
+    body: JSON.stringify(rate),
+    headers: {
+      'content-type': 'application/json'
+    }
+  }).then(response => response.json())
+    .then(createdExchangeRate => {
+      console.log(createdExchangeRate)
+    })
 });
 
 document.getElementById("savePercent").addEventListener("click", () => {
