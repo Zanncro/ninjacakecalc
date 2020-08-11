@@ -15,7 +15,9 @@ else{
 }
 
 document.getElementById('saveRate').addEventListener('click', () => {
-  if(document.getElementById("custExcha").value == ''){
+  var customExchangeRate = document.getElementById("custExcha").value;
+  
+  if(customExchangeRate == ''){
   }
   else{
   localStorage.setItem("storedExchangeRate", document.getElementById("custExcha").value)
@@ -26,6 +28,7 @@ document.getElementById('saveRate').addEventListener('click', () => {
 document.getElementById("savePercent").addEventListener("click", () => {
 
   if(document.getElementById("custBuyPercent").value == ''){
+    
   }
   else{
   localStorage.setItem("storedPercentage", document.getElementById("custBuyPercent").value);
